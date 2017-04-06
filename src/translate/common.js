@@ -1,18 +1,18 @@
 module.exports = {
-    zh: {
+  zh: {
     home: {
       buyTicket: '购票',
       activity: '活动',
-      shop: '商店'
+      shop: '商店',
     },
-    product: require("./product/zh.json")
+    product: require('./product/zh.json'),
   },
   en: {
     home: {
       buyTicket: 'BUY',
       activity: 'ACT',
-      shop: 'SHOP'
+      shop: 'SHOP',
     },
-    product: require("./product/en.json")
-  }
+    product: require('./product/en.json'),
+  },
 }

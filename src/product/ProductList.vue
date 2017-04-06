@@ -41,34 +41,34 @@
 </template>
 
 <script>
-    import NavHeader from '../components/Header'
-    import identity from '../api/identity'
-    import {mapGetters} from 'vuex'
-    export default {
-        name: "product",
-        computed: mapGetters({
-            products: "productList"
-        }),
-        data () {
-            return {
-                msg: "Hello Vue"
-            }
-        },
-        created () {
-            if (!localStorage.token) {
-                identity.login("o-UbJv6eJfqN0PkyvN0RiMXaPW3U").then(data => {
-                    if (data.isEnrolled) {
-                        localStorage.setItem("token", data.token);
-                    }
-                })
-            }
-            this.$store.dispatch('getProductList',{page: 1})
+  import { mapGetters } from 'vuex'
+  import NavHeader from '../components/Header'
+  import identity from '../api/identity'
 
-        },
-        components: {
-            NavHeader
-        }
-    }
+  export default {
+    name: 'product',
+    computed: mapGetters({
+      products: 'productList',
+    }),
+    data() {
+      return {
+        msg: 'Hello Vue',
+      }
+    },
+    created() {
+      if (!localStorage.token) {
+        identity.login('o-UbJv6eJfqN0PkyvN0RiMXaPW3U').then((data) => {
+          if (data.isEnrolled) {
+            localStorage.setItem('token', data.token)
+          }
+        })
+      }
+      this.$store.dispatch('getProductList', { page: 1 })
+    },
+    components: {
+      NavHeader,
+    },
+  }
 </script>
 <style lang="scss">
    @import '../assets/scss/index.scss';

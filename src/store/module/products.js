@@ -1,37 +1,37 @@
 import product from '../../api/product'
 import * as types from '../mutation-types'
 
-// initital state 
+// initital state
 const state = {
-    productList: {}
+  productList: {},
 }
 
 // getters
 
 const getters = {
-    productList: state => state.productList
+  productList: state => state.productList,
 }
 
 // actions
 
 const actions = {
-    getProductList ({commit}) {
-        product.getProductList().then(products => {
-            commit(types.ALL_PRODUCTS, {products})
-        })
-    }
+  getProductList({ commit }) {
+    product.getProductList().then((products) => {
+      commit(types.ALL_PRODUCTS, { products })
+    })
+  },
 }
 
 // mutations
 const mutations = {
-    [types.ALL_PRODUCTS] (state,{products}) {
-        state.productList = products
-    }
+  [types.ALL_PRODUCTS](state, { products }) {
+    state.productList = products
+  },
 }
 
 export default {
-    state,
-    getters,
-    actions,
-    mutations
+  state,
+  getters,
+  actions,
+  mutations,
 }
