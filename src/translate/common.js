@@ -1,3 +1,6 @@
+const PRODUCT_ZH = require('./product/zh.json')
+const PRODUCT_EN = require('./product/en.json')
+
 module.exports = {
   zh: {
     home: {
@@ -5,7 +8,7 @@ module.exports = {
       activity: '活动',
       shop: '商店',
     },
-    product: require('./product/zh.json'),
+    product: PRODUCT_ZH,
   },
   en: {
     home: {
@@ -13,6 +16,6 @@ module.exports = {
       activity: 'ACT',
       shop: 'SHOP',
     },
-    product: require('./product/en.json'),
+    product: PRODUCT_EN,
   },
 }

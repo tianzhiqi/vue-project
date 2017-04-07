@@ -8,15 +8,16 @@ import messages from './translate/common'
 
 Vue.use(VueI18n)
 
-axios.defaults.headers.common.Authorization = 'Bearer ' + localStorage.getItem('token')
+axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`
 const i18n = new VueI18n({
   locale: 'zh',
-  messages: messages
+  messages,
 })
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   store,
-  i18n: i18n,
-  router: router,
-  render: h => h(App)
+  i18n,
+  router,
+  render: h => h(App),
 })

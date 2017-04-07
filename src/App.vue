@@ -6,11 +6,11 @@
 
 <script>
 import ProductList from './product/ProductList'
+
 export default {
   name: 'app',
   components: {
-    ProductList
-  }
+    ProductList,
+  },
 }
 </script>
-

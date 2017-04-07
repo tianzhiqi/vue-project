@@ -10,6 +10,14 @@ module.exports = {
       browser: true,
       es6: true
     },
+    // check if imports actually resolve
+    'settings': {
+      'import/resolver': {
+        'webpack': {
+          'config': 'webpack.config.js'
+        }
+      }
+    },
     "rules": {
       // don't require .vue extension when importing
         'import/extensions': ['error', 'always', {

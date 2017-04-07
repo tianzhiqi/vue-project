@@ -9,7 +9,7 @@ const state = {
 // getters
 
 const getters = {
-  productList: state => state.productList,
+  productList: res => res.productList,
 }
 
 // actions
@@ -24,7 +24,7 @@ const actions = {
 
 // mutations
 const mutations = {
-  [types.ALL_PRODUCTS](state, { products }) {
+  [types.ALL_PRODUCTS](data, { products }) {
     state.productList = products
   },
 }
