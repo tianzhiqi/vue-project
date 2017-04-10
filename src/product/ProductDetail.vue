@@ -3,9 +3,9 @@
     <nav-header>
         <div class="weui-flex" slot="nav">
             <div class="weui-flex__item">
-                <router-link :to="" class="text-center">
-                  <label>{{$t("home.buyTicket")}}</label>
-                </router-link>
+                <a class="text-center">
+                  <label>{{$t("product.intro")}}</label>
+                </a>
             </div>
         </div>
         <div class="head-nav-icon" slot="icon">
@@ -16,15 +16,28 @@
     </nav-header>
     <!-- detail -->
     <div class="weui-article">
-      <h3 class="product-name"></h3>
+      <h3 class="product-name">{{exhibDetail.name}}</h3>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import NavHeader from '../components/Header'
+
 export default {
+  name: 'product-detail',
+  computed: mapGetters({
+    exhibDetail: 'exhibDetail',
+  }),
+  created() {
+    this.$store.dispatch('getExhibDetail', { id: this.$route.params.id })
+  },
+  components: {
+    NavHeader,
+  },
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 </style>

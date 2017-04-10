@@ -26,7 +26,7 @@
         </nav-header>
         <div class="product-list-wrap">
             <div class="product-item" v-for="item in products.list">
-                <router-link to="">
+                <router-link :to="{name: 'productDetail',params: {id: item.id}}">
                     <div class="img-wrap">
                         <img :src="item.titleImage">
                     </div>
