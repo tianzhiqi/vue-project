@@ -12,4 +12,5 @@ export default new Router({
       component: ProductList,
     },
   ],
+  linkActiveClass: 'active',
 })

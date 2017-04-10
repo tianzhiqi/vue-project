@@ -3,9 +3,9 @@
         <nav-header>
             <div class="weui-flex" slot="nav">
                 <div class="weui-flex__item">
-                    <a>
-                        <label>{{$t("home.buyTicket")}}</label>
-                    </a>
+                    <router-link :to="{name: 'product'}">
+                      <label>{{$t("home.buyTicket")}}</label>
+                    </router-link>
                 </div>
                 <div class="weui-flex__item">
                     <a>
