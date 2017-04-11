@@ -4,6 +4,7 @@ import * as types from '../mutation-types'
 // initital state
 const state = {
   productList: {},
+  exhibDetail: {},
 }
 
 // getters

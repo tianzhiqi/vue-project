@@ -50,11 +50,6 @@
     computed: mapGetters({
       products: 'productList',
     }),
-    data() {
-      return {
-        msg: 'Hello Vue',
-      }
-    },
     created() {
       if (!localStorage.token) {
         identity.login('o-UbJv6eJfqN0PkyvN0RiMXaPW3U').then((data) => {

@@ -16,7 +16,7 @@
     </nav-header>
     <!-- detail -->
     <div class="weui-article">
-      <h3 class="product-name">{{exhibDetail.name}}</h3>
+      <h3 class="product-name">{{exhibdetail.name}}</h3>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ import NavHeader from '../components/Header'
 export default {
   name: 'product-detail',
   computed: mapGetters({
-    exhibDetail: 'exhibDetail',
+    exhibdetail: 'exhibDetail',
   }),
   created() {
     this.$store.dispatch('getExhibDetail', { id: this.$route.params.id })
