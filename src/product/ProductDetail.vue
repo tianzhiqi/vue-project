@@ -24,9 +24,15 @@
       </div>
       <div class="desc-link">
         <p class="text-right">
-          <a class="font-theme" :href="exhibdetail.productMoreDetail">{{$t("product.more")}} <i class="right-arrow"></i> </a>
-
+          <a class="font-theme" :href="exhibdetail.productMoreDetail">{{$t("product.more")}}</a>
         </p>
+      </div>
+    </div>
+    <!-- friend tips -->
+    <div class="friend-tips" v-show="exhibdetail.prompt">
+      <p class="tips-title">{{$t("product.tips")}}</p>
+      <div class="tips-content font-gray">
+        <p v-for="tip in tips">{{tip}}</p>
       </div>
     </div>
   </div>
@@ -38,9 +44,14 @@ import NavHeader from '../components/Header'
 
 export default {
   name: 'product-detail',
-  computed: mapGetters({
-    exhibdetail: 'exhibDetail',
-  }),
+  computed: {
+    ...mapGetters({
+      exhibdetail: 'exhibDetail',
+    }),
+    tips() {
+      return this.exhibdetail.prompt && this.exhibdetail.prompt.split('\n')
+    },
+  },
   created() {
     this.$store.dispatch('getExhibDetail', { id: this.$route.params.id })
   },
@@ -51,12 +62,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/_var.scss";
 .exhib-detail {
   padding: 10px;
   font-size: 14px;
   background: #fff;
   margin-top: -8px;
   box-sizing: border-box;
+}
+.more-desc {
+  color: #666;
 }
 .desc-link {
   a {
@@ -68,13 +83,33 @@ export default {
       height: 6px;
       width: 6px;
       border-width: 2px 2px 0 0;
-      border-color: #c8c8cd;
+      border-color: $theme;
       border-style: solid;
       transform: matrix(.71,.71,-.71,.71,0,0);
       position: absolute;
       top: 50%;
       margin-top: -4px;
       right: 2px;
+    }
+  }
+}
+.friend-tips {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.tips-content {
+  font-size: 14px;
+  >p {
+    line-height: 20px;
+    padding-left: 12px;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $theme;
     }
   }
 }

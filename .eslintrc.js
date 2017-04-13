@@ -1,4 +1,5 @@
 module.exports = {
+    parser: "babel-eslint",
     "extends": "airbnb-base",
     "plugins": [
         "html"
@@ -7,8 +8,7 @@ module.exports = {
       sourceType: 'module'
     },
     env: {
-      browser: true,
-      es6: true
+      browser: true
     },
     // check if imports actually resolve
     'settings': {
