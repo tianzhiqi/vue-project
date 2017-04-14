@@ -3,7 +3,7 @@
     <nav-header>
         <div class="weui-flex" slot="nav">
             <div class="weui-flex__item">
-                <a class="text-center">
+                <a class="text-center font-theme">
                   <label>{{$t("product.intro")}}</label>
                 </a>
             </div>
@@ -35,7 +35,18 @@
         <p v-for="tip in tips">{{tip}}</p>
       </div>
     </div>
+    <div class="product-buy">
+      <div class="weui-flex">
+        <div class="weui-flex__item">
+          <p class="exhib-price font-theme">{{exhibdetail.price}}</p>
+        </div>
+        <div class="buy-wrap">
+          <a class="buy-btn">{{$t("product.buyNow")}}</a>
+        </div>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -95,22 +106,54 @@ export default {
 }
 .friend-tips {
   padding: 10px;
-  margin-top: 10px;
   background-color: #fff;
+}
+.tips-title {
+  margin-bottom: 10px;
+  color: #777;
 }
 .tips-content {
   font-size: 14px;
   >p {
     line-height: 20px;
-    padding-left: 12px;
     &:before {
       content: "";
       display: inline-block;
       width: 6px;
       height: 6px;
+      margin-right: 6px;
       border-radius: 50%;
       background: $theme;
     }
+  }
+}
+.product-buy {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  height: 48px;
+  box-shadow: 1px 0 5px #bbb;
+  z-index: 100;
+  .buy-wrap {
+    font-size: 14px;
+    width: 30%;
+    text-align: center;
+    >a {
+      display: block;
+      line-height: 48px;
+      color: #fff;
+    }
+  }
+  .weui-flex__item {
+    .exhib-price {
+      line-height: 48px;
+      padding-left: 10px;
+    }
+  }
+  .buy-btn {
+    background-color: $theme;
   }
 }
 </style>
