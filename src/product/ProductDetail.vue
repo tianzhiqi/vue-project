@@ -150,6 +150,7 @@ export default {
     .exhib-price {
       line-height: 48px;
       padding-left: 10px;
+      font-size: 24px;
     }
   }
   .buy-btn {
