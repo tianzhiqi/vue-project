@@ -3,7 +3,7 @@
         <div class="weui-flex">
           <div>
             <a href="" class="global-logo">
-              <img src="../assets/img/logo.png" class="global-logo-icon" alt="">
+              <img src="../../assets/img/logo.png" class="global-logo-icon" alt="">
             </a>
           </div>
           <div class="weui-flex__item">
@@ -14,7 +14,7 @@
     </header>
 </template>
 <style lang="scss">
-    @import "../assets/scss/_var.scss";
+    @import "../../assets/scss/_var.scss";
     .header-bar {
         padding: 0 15px;
         height: 50px;
@@ -57,7 +57,7 @@
       width: 18.5px;
       height: 20px;
       vertical-align: middle;
-      background: url('../assets/img/user-icon.png') no-repeat 50%/100% 100%;
+      background: url('../../assets/img/user-icon.png') no-repeat 50%/100% 100%;
     }
     .global-logo {
       display: block;

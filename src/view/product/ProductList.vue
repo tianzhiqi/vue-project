@@ -30,9 +30,18 @@
                     <div class="img-wrap">
                         <img :src="item.titleImage">
                     </div>
-                    <div>
+                    <div class="product-info">
                         <p class="text-list text-title">{{item.name}}</p>
                         <p class="text-list text-child text-sm-desc" v-show="item.productType == 1">{{$t("product.voucher")}}</p>
+                        <div class="product-brief" v-html="item.briefIntroduction">
+                        </div>
+                        <div class="weui-flex">
+                          <p class="product-price weui-flex__item">
+                            <span class="font-theme price-member">{{item.memberPrice}}</span>
+                            <span class="price-prime">{{item.price}}</span>
+                          </p>
+                          <a class="btn buy-now">{{$t("product.buyNow")}}</a>
+                        </div>
                     </div>
                 </router-link>
             </div>
@@ -43,7 +52,7 @@
 <script>
   import { mapGetters } from 'vuex'
   import NavHeader from '../components/Header'
-  import identity from '../api/identity'
+  import identity from '../../api/identity'
 
   export default {
     name: 'product',
@@ -66,7 +75,7 @@
   }
 </script>
 <style lang="scss">
-   @import '../assets/scss/index.scss';
+   @import '../../assets/scss/index.scss';
    .product-item {
        display:block;
        font-size: 14px;
@@ -94,9 +103,42 @@
            line-height: 20px;
            color: #999;
        }
+       .product-info {
+         padding: 0 10px;
+         .product-brief {
+           font-size: 12px;
+           margin-top: 4px;
+           line-height: 20px;
+           color: #999;
+         }
+         .weui-flex {
+           margin-top: 6px;
+           .weui-flex__item {
+             display: flex;
+             align-items: center;
+           }
+         }
+         .buy-now {
+           padding: 0 10px;
+           border-radius: 0;
+           background: $theme;
+           border-color: $theme;
+           color: #fff;
+           line-height: 32px;
+         }
+       }
    }
    .img-wrap {
        box-sizing: border-box;
        padding: 4px;
+   }
+   .price-member {
+     font-size: 18px;
+   }
+   .price-prime {
+     color: #bbb;
+     margin-left: 4px;
+     font-size: 12px;
+     text-decoration: line-through;
    }
 </style>

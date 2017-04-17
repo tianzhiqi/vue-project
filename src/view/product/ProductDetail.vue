@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/scss/_var.scss";
+@import "../../assets/scss/_var.scss";
 .exhib-detail {
   padding: 10px;
   font-size: 14px;

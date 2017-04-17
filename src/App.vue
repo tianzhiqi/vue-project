@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ProductList from './product/ProductList'
+import ProductList from './view/product/ProductList'
 
 export default {
   name: 'app',
