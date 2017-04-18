@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
 import products from './module/products'
+import order from './module/order'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
   getters,
   modules: {
     products,
+    order,
   },
   strict: debug,
 })
