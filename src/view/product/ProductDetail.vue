@@ -41,7 +41,7 @@
           <p class="exhib-price font-theme">{{exhibdetail.price}}</p>
         </div>
         <div class="buy-wrap">
-          <a class="buy-btn">{{$t("product.buyNow")}}</a>
+          <router-link :to="{name: 'orderConfirm',params:{pid: exhibdetail.id}}" class="buy-btn">{{$t("product.buyNow")}}</router-link>
         </div>
       </div>
     </div>
