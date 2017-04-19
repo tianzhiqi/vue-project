@@ -26,6 +26,49 @@
           </div>
         </div>
       </div>
+      <div class="pay-item">
+        <div class="weui-flex">
+          <p class="font-gray weui-flex__item">{{$t("order.price")}}</p>
+          <div class="pay-price">
+            {{exhibdetail.price}}
+          </div>
+        </div>
+      </div>
+      <div class="pay-item">
+        <div class="weui-flex">
+          <p class="font-gray weui-flex__item">{{$t("order.quantity")}}</p>
+          <div class="price-quantity">
+            <button class="weui-btn weui-btn_mini weui-btn_default">-</button>
+            <span class="font-gray"></span>
+            <button class="weui-btn weui-btn_mini weui-btn_default">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="pay-item">
+        <div class="weui-flex">
+          <p class="font-gray weui-flex__item">{{$t("order.discount")}}</p>
+          <div class="price-discount">
+
+          </div>
+        </div>
+      </div>
+      <!-- friend tips -->
+      <div class="friend-tips" v-show="exhibdetail.prompt">
+        <p class="tips-title">{{$t("product.tips")}}</p>
+        <div class="tips-content font-gray">
+          <p v-for="tip in tips">{{tip}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="product-buy">
+      <div class="weui-flex">
+        <div class="weui-flex__item">
+          <p class="exhib-price font-theme">{{exhibdetail.price}}</p>
+        </div>
+        <div class="buy-wrap">
+          <a  class="buy-btn">{{$t("order.submitOrder")}}</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -40,6 +83,9 @@ export default {
     ...mapGetters({
       exhibdetail: 'exhibDetail',
     }),
+    tips() {
+      return this.exhibdetail.prompt && this.exhibdetail.prompt.split('\n')
+    },
   },
   created() {
     this.$store.dispatch('getExhibDetail', { id: this.$route.params.pid })
@@ -67,6 +113,13 @@ export default {
         font-size: 12px;
       }
     }
+  }
+  .pay-item {
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px dashed #ddd;
+    font-size: 14px;
+    color: #333;
   }
 }
 .img-cover {

@@ -1,3 +1,7 @@
 {
-  "paying": "Paying"
+  "paying": "Paying",
+  "price": "Price",
+  "quantity": "Quantity",
+  "discount": "Discount",
+  "submit": "Submit"
 }

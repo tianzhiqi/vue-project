@@ -29,10 +29,12 @@
       </div>
     </div>
     <!-- friend tips -->
-    <div class="friend-tips" v-show="exhibdetail.prompt">
-      <p class="tips-title">{{$t("product.tips")}}</p>
-      <div class="tips-content font-gray">
-        <p v-for="tip in tips">{{tip}}</p>
+    <div class="exhib-tips">
+      <div class="friend-tips" v-show="exhibdetail.prompt">
+        <p class="tips-title">{{$t("product.tips")}}</p>
+        <div class="tips-content font-gray">
+          <p v-for="tip in tips">{{tip}}</p>
+        </div>
       </div>
     </div>
     <div class="product-buy">
@@ -104,18 +106,25 @@ export default {
     }
   }
 }
+.exhib-tips {
+  padding: 0 10px;
+}
 .friend-tips {
-  padding: 10px;
+  padding: 10px 0;
   background-color: #fff;
+  margin-top: 10px;
 }
 .tips-title {
   margin-bottom: 10px;
   color: #777;
+  font-size: 14px;
+  margin-top: 6px;
 }
 .tips-content {
   font-size: 14px;
   >p {
     line-height: 20px;
+    font-size: 12px;
     &:before {
       content: "";
       display: inline-block;

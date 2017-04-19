@@ -1,3 +1,7 @@
 {
-  "paying": "结算"
+  "paying": "结算",
+  "price": "单价",
+  "quantity": "数量",
+  "discount": "优惠",
+  "submitOrder": "提交订单"
 }
