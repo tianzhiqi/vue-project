@@ -40,7 +40,7 @@
     <div class="product-buy">
       <div class="weui-flex">
         <div class="weui-flex__item">
-          <p class="exhib-price font-theme">{{exhibdetail.price}}</p>
+          <p class="exhib-price font-theme">{{exhibdetail.price|price}}</p>
         </div>
         <div class="buy-wrap">
           <router-link :to="{name: 'orderConfirm',params:{pid: exhibdetail.id}}" class="buy-btn">{{$t("product.buyNow")}}</router-link>

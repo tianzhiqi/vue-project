@@ -5,6 +5,7 @@ import router from './router'
 import App from './App'
 import store from './store'
 import messages from './translate/common'
+import filter from './utility/filter'
 
 Vue.use(VueI18n)
 
@@ -13,6 +14,9 @@ const i18n = new VueI18n({
   locale: 'zh',
   messages,
 })
+// filter
+Object.keys(filter).forEach(k => Vue.filter(k, filter[k]))
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

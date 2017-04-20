@@ -8,9 +8,9 @@
                     </router-link>
                 </div>
                 <div class="weui-flex__item">
-                  <router-link :to="{name: 'activity'}">
-                      <label>{{$t("home.activity")}}</label>
-                  </router-link>
+                    <router-link :to="{name: 'activity'}">
+                        <label>{{$t("home.activity")}}</label>
+                    </router-link>
                 </div>
                 <div class="weui-flex__item">
                     <a>
@@ -52,23 +52,14 @@
 <script>
   import { mapGetters } from 'vuex'
   import NavHeader from '../components/Header'
-  import identity from '../../api/identity'
 
   export default {
-    name: 'product',
+    name: 'product-activity',
     computed: mapGetters({
       products: 'productList',
     }),
     created() {
-      if (!localStorage.token) {
-        // o-UbJv6eJfqN0PkyvN0RiMXaPW3U
-        identity.login('o-UbJv6eJfqN0PkyvN0RiMXaPW3U').then((data) => {
-          if (data.isEnrolled) {
-            localStorage.setItem('token', data.token)
-          }
-        })
-      }
-      this.$store.dispatch('getProductList', { page: 1 })
+      this.$store.dispatch('getProductList', { page: 1, type: 2, isActivity: true })
     },
     components: {
       NavHeader,

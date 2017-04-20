@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import ProductList from '../view/product/ProductList'
+import ProductActivity from '../view/product/ProductActivity'
 import ProductDetail from '../view/product/ProductDetail'
 import OrderConfirm from '../view/order/OrderConfirm'
 
@@ -12,6 +13,11 @@ export default new Router({
       path: '/',
       name: 'product',
       component: ProductList,
+    },
+    {
+      path: '/activity',
+      name: 'activity',
+      component: ProductActivity,
     },
     {
       path: '/product/:id',

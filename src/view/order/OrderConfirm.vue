@@ -30,7 +30,7 @@
         <div class="weui-flex">
           <p class="font-gray weui-flex__item">{{$t("order.price")}}</p>
           <div class="pay-price">
-            {{exhibdetail.price}}
+            {{exhibdetail.price|price}}
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
           <p class="font-gray weui-flex__item">{{$t("order.quantity")}}</p>
           <div class="price-quantity">
             <button class="weui-btn weui-btn_mini weui-btn_default">-</button>
-            <span class="font-gray"></span>
+            <span class="font-gray">{{quantity}}</span>
             <button class="weui-btn weui-btn_mini weui-btn_default">+</button>
           </div>
         </div>
@@ -63,7 +63,7 @@
     <div class="product-buy">
       <div class="weui-flex">
         <div class="weui-flex__item">
-          <p class="exhib-price font-theme">{{exhibdetail.price}}</p>
+          <p class="exhib-price font-theme">{{exhibdetail.price|price}}</p>
         </div>
         <div class="buy-wrap">
           <a  class="buy-btn">{{$t("order.submitOrder")}}</a>
@@ -82,6 +82,7 @@ export default {
   computed: {
     ...mapGetters({
       exhibdetail: 'exhibDetail',
+      quantity: 'quantity',
     }),
     tips() {
       return this.exhibdetail.prompt && this.exhibdetail.prompt.split('\n')

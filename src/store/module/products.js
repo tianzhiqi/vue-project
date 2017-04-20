@@ -17,8 +17,8 @@ const getters = {
 // actions
 
 const actions = {
-  getProductList({ commit }) {
-    product.getProductList().then((products) => {
+  getProductList({ commit }, params) {
+    product.getProductList(params).then((products) => {
       commit(types.ALL_PRODUCTS, { products })
     })
   },
