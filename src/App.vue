@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import ProductList from './view/product/ProductList'
+import ProductMaster from './view/product/ProductMaster'
 
 export default {
   name: 'app',
   components: {
-    ProductList,
+    ProductMaster,
   },
 }
 </script>

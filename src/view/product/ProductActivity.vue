@@ -1,57 +1,30 @@
 <template>
-    <div class="container">
-        <nav-header>
-            <div class="weui-flex" slot="nav">
-                <div class="weui-flex__item">
-                    <router-link :to="{name: 'product'}">
-                      <label>{{$t("home.buyTicket")}}</label>
-                    </router-link>
+    <div class="product-list-wrap">
+        <div class="product-item" v-for="item in products.list">
+            <router-link :to="{name: 'productDetail',params: {id: item.id}}">
+                <div class="img-wrap">
+                    <img :src="item.titleImage">
                 </div>
-                <div class="weui-flex__item">
-                    <router-link :to="{name: 'activity'}">
-                        <label>{{$t("home.activity")}}</label>
-                    </router-link>
-                </div>
-                <div class="weui-flex__item">
-                    <a>
-                        <label>{{$t("home.shop")}}</label>
-                    </a>
-                </div>
-            </div>
-            <div class="head-nav-icon" slot="icon">
-                <a>
-                    <i class="user-icon"></i>
-                </a>
-            </div>
-        </nav-header>
-        <div class="product-list-wrap">
-            <div class="product-item" v-for="item in products.list">
-                <router-link :to="{name: 'productDetail',params: {id: item.id}}">
-                    <div class="img-wrap">
-                        <img :src="item.titleImage">
+                <div class="product-info">
+                    <p class="text-list text-title">{{item.name}}</p>
+                    <p class="text-list text-child text-sm-desc" v-show="item.productType == 1">{{$t("product.voucher")}}</p>
+                    <div class="product-brief" v-html="item.briefIntroduction">
                     </div>
-                    <div class="product-info">
-                        <p class="text-list text-title">{{item.name}}</p>
-                        <p class="text-list text-child text-sm-desc" v-show="item.productType == 1">{{$t("product.voucher")}}</p>
-                        <div class="product-brief" v-html="item.briefIntroduction">
-                        </div>
-                        <div class="weui-flex">
-                          <p class="product-price weui-flex__item">
-                            <span class="font-theme price-member">{{item.memberPrice|price}}</span>
-                            <span class="price-prime">{{item.price|price}}</span>
-                          </p>
-                          <a class="btn buy-now">{{$t("product.buyNow")}}</a>
-                        </div>
+                    <div class="weui-flex">
+                      <p class="product-price weui-flex__item">
+                        <span class="font-theme price-member">{{item.memberPrice|price}}</span>
+                        <span class="price-prime">{{item.price|price}}</span>
+                      </p>
+                      <a class="btn buy-now">{{$t("product.buyNow")}}</a>
                     </div>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
   import { mapGetters } from 'vuex'
-  import NavHeader from '../components/Header'
 
   export default {
     name: 'product-activity',
@@ -59,78 +32,7 @@
       products: 'productList',
     }),
     created() {
-      this.$store.dispatch('getProductList', { page: 1, type: 2, isActivity: true })
-    },
-    components: {
-      NavHeader,
+      this.$store.dispatch('getProductList', { page: 1, isActivity: true })
     },
   }
 </script>
-<style lang="scss">
-   @import '../../assets/scss/index.scss';
-   .product-item {
-       display:block;
-       font-size: 14px;
-       color: #333;
-       padding-bottom: 10px;
-       margin-top: 10px;
-       background: #fff;
-       >a {
-           display: block;
-       }
-       .img-wrap {
-           padding-bottom: 0;
-           img {
-               display: block;
-               width: 100%;
-               height: auto;
-               border-bottom: 1px solid #eee;
-               border-top: 1px solid #eee;
-           }
-       }
-       .text-list {
-           margin-bottom: 0;
-       }
-       .text-child {
-           line-height: 20px;
-           color: #999;
-       }
-       .product-info {
-         padding: 0 10px;
-         .product-brief {
-           font-size: 12px;
-           margin-top: 4px;
-           line-height: 20px;
-           color: #999;
-         }
-         .weui-flex {
-           margin-top: 6px;
-           .weui-flex__item {
-             display: flex;
-             align-items: center;
-           }
-         }
-         .buy-now {
-           padding: 0 10px;
-           border-radius: 0;
-           background: $theme;
-           border-color: $theme;
-           color: #fff;
-           line-height: 32px;
-         }
-       }
-   }
-   .img-wrap {
-       box-sizing: border-box;
-       padding: 4px;
-   }
-   .price-member {
-     font-size: 18px;
-   }
-   .price-prime {
-     color: #bbb;
-     margin-left: 4px;
-     font-size: 12px;
-     text-decoration: line-through;
-   }
-</style>

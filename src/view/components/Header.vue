@@ -2,9 +2,9 @@
     <header class="header-bar">
         <div class="weui-flex">
           <div>
-            <a href="" class="global-logo">
+            <router-link :to="{name: 'product'}" class="global-logo">
               <img src="../../assets/img/logo.png" class="global-logo-icon" alt="">
-            </a>
+            </router-link>
           </div>
           <div class="weui-flex__item">
             <slot name="nav"></slot>
