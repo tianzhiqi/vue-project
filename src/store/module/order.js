@@ -13,11 +13,23 @@ const getters = {
 
 // actions
 const actions = {
-
+  addQuantity({ commit }) {
+    commit(types.NUMBER_ADD)
+  },
+  reduceQuantity({ commit }) {
+    commit(types.NUMBER_REDUCE)
+  },
 }
 
 const mutations = {
-
+  [types.NUMBER_ADD]() {
+    state.quantity += 1
+  },
+  [types.NUMBER_REDUCE]() {
+    if (state.quantity > 1) {
+      state.quantity -= 1
+    }
+  },
 }
 
 export default {

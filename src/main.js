@@ -25,4 +25,4 @@ new Vue({
   router,
   render: h => h(App),
 })
-router.replace('/product')
+// router.replace('/product')

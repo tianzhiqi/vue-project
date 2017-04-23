@@ -38,9 +38,9 @@
         <div class="weui-flex">
           <p class="font-gray weui-flex__item">{{$t("order.quantity")}}</p>
           <div class="price-quantity">
-            <button class="weui-btn weui-btn_mini weui-btn_default">-</button>
+            <button class="weui-btn weui-btn_mini weui-btn_default" @click="reduce">-</button>
             <span class="font-gray">{{quantity}}</span>
-            <button class="weui-btn weui-btn_mini weui-btn_default">+</button>
+            <button class="weui-btn weui-btn_mini weui-btn_default" @click="add">+</button>
           </div>
         </div>
       </div>
@@ -90,6 +90,14 @@ export default {
   },
   created() {
     this.$store.dispatch('getExhibDetail', { id: this.$route.params.pid })
+  },
+  methods: {
+    add() {
+      this.$store.dispatch('addQuantity')
+    },
+    reduce() {
+      this.$store.dispatch('reduceQuantity')
+    },
   },
   components: {
     NavHeader,

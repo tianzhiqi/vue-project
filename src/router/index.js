@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ProductMaster from '../view/product/ProductMaster'
+// import ProductMaster from '../view/product/ProductMaster'
 import ProductList from '../view/product/ProductList'
 import ProductActivity from '../view/product/ProductActivity'
 import ProductDetail from '../view/product/ProductDetail'
@@ -12,19 +12,25 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: ProductMaster,
-      children: [
-        {
-          path: 'product',
-          name: 'product',
-          component: ProductList,
-        },
-        {
-          path: 'activity',
-          name: 'activity',
-          component: ProductActivity,
-        },
-      ],
+      name: 'product',
+      component: ProductList,
+      // children: [
+      //   {
+      //     path: 'product',
+      //     name: 'product',
+      //     component: ProductList,
+      //   },
+      //   {
+      //     path: 'activity',
+      //     name: 'activity',
+      //     component: ProductActivity,
+      //   },
+      // ],
+    },
+    {
+      path: '/activity',
+      name: 'activity',
+      component: ProductActivity,
     },
     {
       path: '/product/:id',

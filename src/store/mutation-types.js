@@ -1,3 +1,5 @@
 export const ALL_PRODUCTS = 'ALL_PRODUCTS'
 export const SHOP_BANNER = 'SHOP_BANNER'
 export const EXHIB_DETAIL = 'EXHIB_DETAIL'
+export const NUMBER_ADD = 'NUMBER_ADD'
+export const NUMBER_REDUCE = 'NUMBER_REDUCE'

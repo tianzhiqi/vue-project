@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <!-- <div class="container"> -->
     <nav-header>
         <div class="weui-flex" slot="nav">
             <div class="weui-flex__item">
-                <router-link :to="{name: 'product'}">
+                <router-link :to="{name: 'product'}" exact>
                   <label>{{$t("home.buyTicket")}}</label>
                 </router-link>
             </div>
@@ -24,20 +24,16 @@
             </a>
         </div>
     </nav-header>
-    <router-view></router-view>
-  </div>
-
 </template>
 
 <script>
 import NavHeader from '../components/Header'
-import ProductList from './ProductList'
 
 export default {
   name: 'product-master',
   components: {
     NavHeader,
-    ProductList,
+    // ProductList,
   },
 }
 </script>

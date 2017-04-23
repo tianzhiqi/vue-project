@@ -2,7 +2,7 @@
     <header class="header-bar">
         <div class="weui-flex">
           <div>
-            <router-link :to="{name: 'product'}" class="global-logo">
+            <router-link :to="{name: 'product'}" class="global-logo" exact>
               <img src="../../assets/img/logo.png" class="global-logo-icon" alt="">
             </router-link>
           </div>

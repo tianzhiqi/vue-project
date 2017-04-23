@@ -1,4 +1,6 @@
 <template>
+  <div class="container">
+    <product-master></product-master>
     <div class="product-list-wrap">
         <div class="product-item" v-for="item in products.list">
             <router-link :to="{name: 'productDetail',params: {id: item.id}}">
@@ -21,10 +23,12 @@
             </router-link>
         </div>
     </div>
+  </div>
 </template>
 
 <script>
   import { mapGetters } from 'vuex'
+  import ProductMaster from './ProductMaster'
 
   export default {
     name: 'product-activity',
@@ -33,6 +37,9 @@
     }),
     created() {
       this.$store.dispatch('getProductList', { page: 1, isActivity: true })
+    },
+    components: {
+      ProductMaster,
     },
   }
 </script>
