@@ -5,4 +5,7 @@ export default {
   getEnabledCoupon(id, pid) {
     return axios.get(`/api/preferentialCardMembers/${id}/${pid}`).then(res => res.data)
   },
+  placeOrder(params) {
+    return axios.post('/api/orders', params).then(res => res.data)
+  },
 }
