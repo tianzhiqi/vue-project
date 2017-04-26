@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import ProductMaster from '../view/product/ProductMaster'
 import ProductList from '../view/product/ProductList'
 import ProductActivity from '../view/product/ProductActivity'
 import ProductDetail from '../view/product/ProductDetail'
 import OrderConfirm from '../view/order/OrderConfirm'
+import Member from '../view/member/Member'
 
 Vue.use(Router)
 
@@ -14,18 +14,6 @@ export default new Router({
       path: '/',
       name: 'product',
       component: ProductList,
-      // children: [
-      //   {
-      //     path: 'product',
-      //     name: 'product',
-      //     component: ProductList,
-      //   },
-      //   {
-      //     path: 'activity',
-      //     name: 'activity',
-      //     component: ProductActivity,
-      //   },
-      // ],
     },
     {
       path: '/activity',
@@ -41,6 +29,11 @@ export default new Router({
       path: '/neworder/:pid',
       name: 'orderConfirm',
       component: OrderConfirm,
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: Member,
     },
   ],
   linkActiveClass: 'active',

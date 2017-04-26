@@ -4,21 +4,32 @@
       <div class="weui-flex" slot="nav">
           <div class="weui-flex__item">
               <a class="text-center font-theme">
-                <label></label>
+                <label>{{$t("member.profile")}}</label>
               </a>
           </div>
       </div>
       <div class="head-nav-icon" slot="icon">
-        <router-link :to="{name: 'profile'}">
-            <i class="user-icon"></i>
-        </router-link>
+
       </div>
     </nav-header>
+    <div class="my-profile common-wrap">
+      <div class="profile-card">
+        <a href="#">
+
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import NavHeader from '../components/Header'
+
 export default {
+  name: 'profile',
+  components: {
+    NavHeader,
+  },
 }
 </script>
 

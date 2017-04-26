@@ -9,9 +9,9 @@
             </div>
         </div>
         <div class="head-nav-icon" slot="icon">
-            <a>
-                <i class="user-icon"></i>
-            </a>
+          <router-link :to="{name: 'profile'}">
+              <i class="user-icon"></i>
+          </router-link>
         </div>
     </nav-header>
     <div class="pay-wrap">

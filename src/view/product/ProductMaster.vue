@@ -19,9 +19,9 @@
             </div>
         </div>
         <div class="head-nav-icon" slot="icon">
-            <a>
+            <router-link :to="{name: 'profile'}">
                 <i class="user-icon"></i>
-            </a>
+            </router-link>
         </div>
     </nav-header>
 </template>
@@ -33,7 +33,6 @@ export default {
   name: 'product-master',
   components: {
     NavHeader,
-    // ProductList,
   },
 }
 </script>
