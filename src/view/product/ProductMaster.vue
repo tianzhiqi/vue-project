@@ -13,9 +13,9 @@
                 </router-link>
             </div>
             <div class="weui-flex__item">
-                <a>
+                <router-link :to="{name: 'shop'}">
                     <label>{{$t("home.shop")}}</label>
-                </a>
+                </router-link>
             </div>
         </div>
         <div class="head-nav-icon" slot="icon">

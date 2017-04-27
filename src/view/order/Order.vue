@@ -14,6 +14,8 @@
         </router-link>
       </div>
     </nav-header>
+    <div class="common-wrap">
+    </div>
   </div>
 </template>
 
