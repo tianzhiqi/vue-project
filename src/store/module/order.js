@@ -19,6 +19,11 @@ const actions = {
   reduceQuantity({ commit }) {
     commit(types.NUMBER_REDUCE)
   },
+  placeOrder({ commit }, params) {
+    order.placeOrder(params).then((data) => {
+      commit(types.PLACE_ORDER)
+    })
+  }
 }
 
 const mutations = {
@@ -29,6 +34,9 @@ const mutations = {
     if (state.quantity > 1) {
       state.quantity -= 1
     }
+  },
+  [types.PLACE_ORDER]() {
+
   },
 }
 

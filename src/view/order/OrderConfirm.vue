@@ -66,7 +66,7 @@
           <p class="exhib-price font-theme">{{exhibdetail.price|price}}</p>
         </div>
         <div class="buy-wrap">
-          <a  class="buy-btn">{{$t("order.submitOrder")}}</a>
+          <a  class="buy-btn" @click="placeOrder">{{$t("order.submitOrder")}}</a>
         </div>
       </div>
     </div>
@@ -97,6 +97,14 @@ export default {
     },
     reduce() {
       this.$store.dispatch('reduceQuantity')
+    },
+    placeOrder() {
+      let orderParam = {
+        quantity: this.quantity,
+        channel: 1,
+        productId: this.exhibdetail.id,
+      }
+      this.$store.dispatch('placeOrder', orderParam)
     },
   },
   components: {
