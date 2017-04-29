@@ -1,4 +1,5 @@
 import order from '../../api/order'
+import router from '../../router'
 import * as types from '../mutation-types'
 
 // initital state
@@ -20,10 +21,10 @@ const actions = {
     commit(types.NUMBER_REDUCE)
   },
   placeOrder({ commit }, params) {
-    order.placeOrder(params).then((data) => {
-      commit(types.PLACE_ORDER)
+    order.placeOrder(params).then((orderDetail) => {
+      commit(types.PLACE_ORDER, { orderDetail })
     })
-  }
+  },
 }
 
 const mutations = {
@@ -35,8 +36,8 @@ const mutations = {
       state.quantity -= 1
     }
   },
-  [types.PLACE_ORDER]() {
-
+  [types.PLACE_ORDER](data, { orderDetail }) {
+    router.push({ name: 'order', params: { id: orderDetail.id } })
   },
 }
 

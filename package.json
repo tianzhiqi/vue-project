@@ -15,7 +15,8 @@
     "vue": "2.1.10",
     "vue-i18n": "6.0.0-alpha.1",
     "vue-router": "^2.2.1",
-    "vuex": "^2.1.2"
+    "vuex": "^2.1.2",
+    "vuex-router-sync": "^4.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

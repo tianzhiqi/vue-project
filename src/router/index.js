@@ -5,6 +5,7 @@ import ProductActivity from '../view/product/ProductActivity'
 import ProductShop from '../view/product/ProductShop'
 import ProductDetail from '../view/product/ProductDetail'
 import OrderConfirm from '../view/order/OrderConfirm'
+import Order from '../view/order/Order'
 import Member from '../view/member/Member'
 
 Vue.use(Router)
@@ -40,6 +41,11 @@ export default new Router({
       path: '/shop',
       name: 'shop',
       component: ProductShop,
+    },
+    {
+      path: '/order/:id',
+      name: 'order',
+      component: Order,
     },
   ],
   linkActiveClass: 'active',

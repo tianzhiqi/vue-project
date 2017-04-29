@@ -20,7 +20,13 @@
 </template>
 
 <script>
+import NavHeader from '../components/Header'
+
 export default {
+  name: 'order',
+  components: {
+    NavHeader,
+  },
 }
 </script>
 

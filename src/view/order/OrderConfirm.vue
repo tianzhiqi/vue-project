@@ -83,6 +83,7 @@ export default {
     ...mapGetters({
       exhibdetail: 'exhibDetail',
       quantity: 'quantity',
+      order: 'order',
     }),
     tips() {
       return this.exhibdetail.prompt && this.exhibdetail.prompt.split('\n')
@@ -99,7 +100,7 @@ export default {
       this.$store.dispatch('reduceQuantity')
     },
     placeOrder() {
-      let orderParam = {
+      const orderParam = {
         quantity: this.quantity,
         channel: 1,
         productId: this.exhibdetail.id,
