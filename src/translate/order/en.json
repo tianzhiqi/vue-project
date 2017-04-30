@@ -3,5 +3,6 @@
   "price": "Price",
   "quantity": "Quantity",
   "discount": "Discount",
-  "submit": "Submit"
+  "submit": "Submit",
+  "orderNo": "Order No."
 }

@@ -8,4 +8,7 @@ export default {
   placeOrder(params) {
     return axios.post('/api/orders', params).then(res => res.data)
   },
+  getOrder(id) {
+    return axios.get(`/api/orders/${id}`).then(res => res.data)
+  },
 }

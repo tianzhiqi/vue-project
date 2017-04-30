@@ -5,11 +5,13 @@ import * as types from '../mutation-types'
 // initital state
 const state = {
   quantity: 1,
+  preOrder: {},
 }
 
 // getters
 const getters = {
   quantity: res => res.quantity,
+  preOrder: res => res.preOrder,
 }
 
 // actions
@@ -25,6 +27,11 @@ const actions = {
       commit(types.PLACE_ORDER, { orderDetail })
     })
   },
+  getPreOrder({ commit }, params) {
+    order.getOrder(params.id).then((preOrder) => {
+      commit(types.GET_ORDER, { preOrder })
+    })
+  },
 }
 
 const mutations = {
@@ -38,6 +45,9 @@ const mutations = {
   },
   [types.PLACE_ORDER](data, { orderDetail }) {
     router.push({ name: 'order', params: { id: orderDetail.id } })
+  },
+  [types.GET_ORDER](data, { preOrder }) {
+    state.preOrder = preOrder
   },
 }
 
