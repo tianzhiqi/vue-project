@@ -17,7 +17,7 @@
     <div class="common-wrap">
       <div class="order-info">
         <p class="order-info_title">
-          <label class="font-light-gray"><em>{{$t("order.orderNo")}}:</em>{{order.orderNo}}</label>
+          <label class="order-info_no">{{$t("order.orderNo")}}: {{order.orderNo}}</label>
         </p>
         <div class="weui-flex">
           <div class="img-cover">
@@ -25,7 +25,18 @@
           </div>
           <div class="weui-flex__item pro-info">
             <p class="text-list font-theme" v-if="order.product">{{order.product.name}}</p>
-            <!-- <p class="text-child text-sm-desc" v-show="exhibdetail.productType == 1">{{$t("product.voucher")}}</p> -->
+            <p class="text-list text-child">{{order.createdtime | date('YYYY-MM-DD HH:mm')}}</p>
+            <p class="text-list font-gray" v-if="order.product">{{order.product.price | price}}</p>
+          </div>
+        </div>
+        <div class="weui-cell">
+          <div class="weui-cell__hd">
+            <p class="text-list text-title">{{$t("order.quantity")}}: {{order.quantity}}</p>
+          </div>
+          <div class="weui-cell__bd">
+          </div>
+          <div class="weui-cell__ft">
+            <p class="text-list text-title">{{$t("order.total")}}: {{order.totalAmount | price}}</p>
           </div>
         </div>
       </div>
@@ -53,5 +64,33 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+.order-info {
+  padding: 0 10px;
+  .order-info_title {
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+    .order-info_no {
+      color: #999;
+    }
+  }
+  .weui-flex {
+    padding: 10px 0;
+    .text-list {
+      line-height: 24px;
+      margin: 0;
+    }
+    .text-child {
+      color: #999;
+    }
+  }
+  .weui-cell {
+    padding: 10px 0;
+    .text-list {
+      color: #666;
+    }
+  }
+}
 </style>

@@ -16,7 +16,7 @@
 <style lang="scss">
     @import "../../assets/scss/_var.scss";
     .header-bar {
-        padding: 0 15px;
+        padding: 0 10px;
         height: 50px;
         background: #fff;
         &>.weui-flex {

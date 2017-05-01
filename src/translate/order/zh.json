@@ -4,5 +4,6 @@
   "quantity": "数量",
   "discount": "优惠",
   "submitOrder": "提交订单",
-  "orderNo": "订单号"
+  "orderNo": "订单号",
+  "total": "合计"
 }

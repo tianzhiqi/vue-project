@@ -4,5 +4,6 @@
   "quantity": "Quantity",
   "discount": "Discount",
   "submit": "Submit",
-  "orderNo": "Order No."
+  "orderNo": "Order No.",
+  "total": "Total"
 }
