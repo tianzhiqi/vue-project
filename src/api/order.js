@@ -1,5 +1,5 @@
 import axios from 'axios'
-// import Qs from 'qs'
+import Qs from 'qs'
 
 export default {
   getEnabledCoupon(id, pid) {
@@ -10,5 +10,8 @@ export default {
   },
   getOrder(id) {
     return axios.get(`/api/orders/${id}`).then(res => res.data)
+  },
+  getOrderList(params) {
+    return axios.get(`/api/orders?${Qs.stringify(params)}`).then(res => res.data)
   },
 }

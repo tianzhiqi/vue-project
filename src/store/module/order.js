@@ -6,12 +6,14 @@ import * as types from '../mutation-types'
 const state = {
   quantity: 1,
   preOrder: {},
+  orderList: {},
 }
 
 // getters
 const getters = {
   quantity: res => res.quantity,
   preOrder: res => res.preOrder,
+  orderList: res => res.orderList,
 }
 
 // actions
@@ -32,6 +34,11 @@ const actions = {
       commit(types.GET_ORDER, { preOrder })
     })
   },
+  getOrderList({ commit }, params) {
+    order.getOrderList(params).then((orderList) => {
+      commit(types.ORDER_LIST, { orderList })
+    })
+  },
 }
 
 const mutations = {
@@ -48,6 +55,9 @@ const mutations = {
   },
   [types.GET_ORDER](data, { preOrder }) {
     state.preOrder = preOrder
+  },
+  [types.ORDER_LIST](data, { orderList }) {
+    state.orderList = orderList
   },
 }
 

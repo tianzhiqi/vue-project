@@ -9,7 +9,6 @@
           </div>
       </div>
       <div class="head-nav-icon" slot="icon">
-
       </div>
     </nav-header>
     <div class="my-profile common-wrap">
@@ -25,6 +24,11 @@
           </div>
         </a>
       </div>
+      <div class="user-order">
+        <div class="">
+
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -38,10 +42,12 @@ export default {
   computed: {
     ...mapGetters({
       member: 'member',
+      orderList: 'orderList',
     }),
   },
   created() {
     this.$store.dispatch('getMemberInfo')
+    this.$store.dispatch('getOrderList', { page: 1 })
   },
   components: {
     NavHeader,
