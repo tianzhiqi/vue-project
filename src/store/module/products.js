@@ -5,6 +5,7 @@ import * as types from '../mutation-types'
 const state = {
   productList: {},
   exhibDetail: {},
+  topBanner: {},
 }
 
 // getters
@@ -12,6 +13,7 @@ const state = {
 const getters = {
   productList: res => res.productList,
   exhibDetail: res => res.exhibDetail,
+  topBanner: res => res.topBanner,
 }
 
 // actions
@@ -27,6 +29,11 @@ const actions = {
       commit(types.EXHIB_DETAIL, { exhibDetail })
     })
   },
+  getTopBanner({ commit }) {
+    product.getTopBanner().then((banner) => {
+      commit(types.TOP_BANNER, { banner })
+    })
+  },
 }
 
 // mutations
@@ -36,6 +43,9 @@ const mutations = {
   },
   [types.EXHIB_DETAIL](data, { exhibDetail }) {
     state.exhibDetail = exhibDetail
+  },
+  [types.TOP_BANNER](data, { banner }) {
+    state.topBanner = banner
   },
 }
 
