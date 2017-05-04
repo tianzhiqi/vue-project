@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import axios from 'axios'
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
 import { sync } from 'vuex-router-sync'
 import store from './store'
 import router from './router'
@@ -9,7 +10,7 @@ import messages from './translate/common'
 import filter from './utility/filter'
 
 Vue.use(VueI18n)
-
+// Vue.use(VueAwesomeSwiper)
 axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`
 const i18n = new VueI18n({
   locale: 'zh',
