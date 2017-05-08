@@ -48,6 +48,11 @@
           </div>
         </div>
       </div>
+      <div class="shop-hotlist">
+        <div class="category-item">
+
+        </div>
+      </div>
       <div class="shop-banners" v-for="item in singleBanner.list">
         <div class="weui-flex">
           <a href="#">
@@ -71,6 +76,7 @@ export default {
       bannerList: 'topBanner',
       topicList: 'topicList',
       singleBanner: 'botBanner',
+      hotList: 'hotList',
     }),
   },
   data() {
@@ -85,6 +91,7 @@ export default {
     this.$store.dispatch('getTopBanner')
     this.$store.dispatch('getTopicList')
     this.$store.dispatch('getBotBanner')
+    this.$store.dispatch('getHotList')
   },
   components: {
     ProductMaster,

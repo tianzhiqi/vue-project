@@ -8,6 +8,7 @@ const state = {
   topBanner: {},
   topicList: {},
   botBanner: {},
+  hotList: {},
 }
 
 // getters
@@ -18,6 +19,7 @@ const getters = {
   topBanner: res => res.topBanner,
   topicList: res => res.topicList,
   botBanner: res => res.botBanner,
+  hotList: res => res.hotList,
 }
 
 // actions
@@ -48,6 +50,11 @@ const actions = {
       commit(types.BOT_BANNER, { bot })
     })
   },
+  getHotList({ commit }) {
+    product.getHotList().then((hot) => {
+      commit(types.HOT_LIST, { hot })
+    })
+  },
 }
 
 // mutations
@@ -66,6 +73,9 @@ const mutations = {
   },
   [types.BOT_BANNER](data, { bot }) {
     state.botBanner = bot
+  },
+  [types.HOT_LIST](data, { hot }) {
+    state.hotList = hot
   },
 }
 

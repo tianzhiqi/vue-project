@@ -17,4 +17,7 @@ export default {
   getBottomBanner() {
     return axios.get('/api/productBanner/bottom').then(res => res.data)
   },
+  getHotList() {
+    return axios.get('/api/productBanner/onlyProduct').then(res => res.data)
+  },
 }
