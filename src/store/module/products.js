@@ -9,6 +9,7 @@ const state = {
   topicList: {},
   botBanner: {},
   hotList: {},
+  topicDetail: {},
 }
 
 // getters
@@ -20,6 +21,7 @@ const getters = {
   topicList: res => res.topicList,
   botBanner: res => res.botBanner,
   hotList: res => res.hotList,
+  topicDetail: res => res.topicDetail,
 }
 
 // actions
@@ -55,6 +57,11 @@ const actions = {
       commit(types.HOT_LIST, { hot })
     })
   },
+  getTopicDetail({ commit }, params) {
+    product.getTopicDetail(params.id, params.page).then((detail) => {
+      commit(types.TOPIC_DETAIL, { detail })
+    })
+  },
 }
 
 // mutations
@@ -76,6 +83,9 @@ const mutations = {
   },
   [types.HOT_LIST](data, { hot }) {
     state.hotList = hot
+  },
+  [types.TOPIC_DETAIL](data, { detail }) {
+    state.topicDetail = detail
   },
 }
 

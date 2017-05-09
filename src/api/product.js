@@ -20,4 +20,7 @@ export default {
   getHotList() {
     return axios.get('/api/productBanner/onlyProduct').then(res => res.data)
   },
+  getTopicById(id,page) {
+    return axios.get(`/api/productBanner/${id}?page=${page}`).then(res => res.data)
+  },
 }
