@@ -17,17 +17,9 @@
             </a>
         </div>
     </nav-header>
-    <div class="topic-list_wrap">
-      <div class="img-wrap">
-        <img :src="topicDetail.titleImage" alt="">
-      </div>
-      <div class="topic-info">
-        {{topicDetail.description}}
-      </div>
-      <div class="topic-list">
-        <div class="category-item">
+    <div class="common-wrap">
+      <div class="category-item">
 
-        </div>
       </div>
     </div>
   </div>
@@ -38,20 +30,20 @@ import { mapGetters } from 'vuex'
 import NavHeader from '../components/Header'
 
 export default {
-  name: 'topic-detail',
+  name: 'product-banner',
   computed: {
     ...mapGetters({
-      topicDetail: 'topicDetail',
+      bannerPro: 'bannerProList',
     }),
   },
   created() {
-    this.$store.dispatch('getTopicDetail', { id: this.$route.params.id, page: 1 })
+    this.$store.dispatch('getBannerProList', this.$route.params.ids)
   },
-  components: {
+  component: {
     NavHeader,
   },
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
 </style>

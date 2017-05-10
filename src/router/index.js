@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import ProductList from '../view/product/ProductList'
 import ProductActivity from '../view/product/ProductActivity'
 import ProductShop from '../view/product/ProductShop'
+import ProductTopic from '../view/product/ProductTopic'
+import ProductBanner from '../view/product/ProductBanner'
 import ProductIndex from '../view/product/ProductIndex'
 import OrderConfirm from '../view/order/OrderConfirm'
 import Order from '../view/order/Order'
@@ -26,6 +28,16 @@ export default new Router({
       path: '/product/:id',
       name: 'productIndex',
       component: ProductIndex,
+    },
+    {
+      path: '/topic/:id',
+      name: 'productTopic',
+      component: ProductTopic,
+    },
+    {
+      path: '/banner/:ids',
+      name: 'productBanner',
+      component: ProductBanner,
     },
     {
       path: '/neworder/:pid',

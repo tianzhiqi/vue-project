@@ -10,6 +10,7 @@ const state = {
   botBanner: {},
   hotList: {},
   topicDetail: {},
+  bannerProList: {},
 }
 
 // getters
@@ -22,6 +23,7 @@ const getters = {
   botBanner: res => res.botBanner,
   hotList: res => res.hotList,
   topicDetail: res => res.topicDetail,
+  bannerProList: res => res.bannerProList,
 }
 
 // actions
@@ -58,8 +60,13 @@ const actions = {
     })
   },
   getTopicDetail({ commit }, params) {
-    product.getTopicDetail(params.id, params.page).then((detail) => {
+    product.getTopicById(params.id, params.page).then((detail) => {
       commit(types.TOPIC_DETAIL, { detail })
+    })
+  },
+  getBannerProList({ commit }, params) {
+    product.getShopProducts(params).then((bannerPro) => {
+      commit(types.BANNER_PRODUCTS, { bannerPro })
     })
   },
 }
@@ -86,6 +93,9 @@ const mutations = {
   },
   [types.TOPIC_DETAIL](data, { detail }) {
     state.topicDetail = detail
+  },
+  [types.BANNER_PRODUCTS](data, { bannerPro }) {
+    state.bannerProList = bannerPro
   },
 }
 

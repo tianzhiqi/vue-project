@@ -5,7 +5,7 @@
       <div class="top-banner">
         <swiper :options="swiperOption">
           <swiper-slide v-for="slide in bannerList.list">
-            <a href="#">
+            <a @click="turnTarget(slide.targetData)">
               <img :src="slide.titleImage" alt="">
             </a>
           </swiper-slide>
@@ -30,9 +30,9 @@
       <div class="shop-topics" v-for="topic in topicList.list">
         <div class="weui-flex">
           <span class="topic-badge">{{topic.name}}</span>
-          <a href="#">
+          <router-link :to="{name: 'productTopic',params: {id: topic.id}}">
             <img :src="topic.titleImage" alt="">
-          </a>
+          </router-link>
         </div>
         <div class="weui-flex" v-if="topic.ShopProduct">
           <div class="weui-flex__item" v-for="pro in topic.ShopProduct">
@@ -44,7 +44,7 @@
             </a>
           </div>
           <div class="all-rec">
-            <a href="#">{{$t("product.rec")}}</a>
+            <router-link :to="{name: 'productTopic',params: {id: topic.id}}">{{$t("product.rec")}}</router-link>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
       </div>
       <div class="shop-banners" v-for="item in singleBanner.list">
         <div class="weui-flex">
-          <a href="#">
+          <a @click="turnTarget(item.targetData)">
             <img :src="item.titleImage" alt="">
           </a>
         </div>
@@ -92,6 +92,13 @@ export default {
     this.$store.dispatch('getTopicList')
     this.$store.dispatch('getBotBanner')
     this.$store.dispatch('getHotList')
+  },
+  methods: {
+    turnTarget(id) {
+      if (id && id !== 0 && id !== -1) {
+        id.indexOf(',') > -1 ? (this.$router.push({ name: 'productBanner', params: { ids: id } })) : (this.$router.push({ name: 'product' }))
+      }
+    },
   },
   components: {
     ProductMaster,
