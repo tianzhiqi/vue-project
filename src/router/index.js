@@ -6,6 +6,7 @@ import ProductShop from '../view/product/ProductShop'
 import ProductTopic from '../view/product/ProductTopic'
 import ProductBanner from '../view/product/ProductBanner'
 import ProductIndex from '../view/product/ProductIndex'
+import ProductDetail from '../view/product/ProductDetail'
 import OrderConfirm from '../view/order/OrderConfirm'
 import Order from '../view/order/Order'
 import Member from '../view/member/Member'
@@ -38,6 +39,11 @@ export default new Router({
       path: '/banner/:ids',
       name: 'productBanner',
       component: ProductBanner,
+    },
+    {
+      path: '/shopproduct/:id',
+      name: 'productDetail',
+      component: ProductDetail,
     },
     {
       path: '/neworder/:pid',

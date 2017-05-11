@@ -26,4 +26,7 @@ export default {
   getShopProducts(ids) {
     return axios.get(`/api/shopProducts?ids=${ids}`).then(res => res.data)
   },
+  getShopProDetail(id) {
+    return axios.get(`/api/shopProducts/${id}`).then(res => res.data)
+  },
 }

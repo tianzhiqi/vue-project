@@ -96,7 +96,11 @@ export default {
   methods: {
     turnTarget(id) {
       if (id && id !== 0 && id !== -1) {
-        id.indexOf(',') > -1 ? (this.$router.push({ name: 'productBanner', params: { ids: id } })) : (this.$router.push({ name: 'product' }))
+        if (id.indexOf(',') > -1) {
+          this.$router.push({ name: 'productBanner', params: { ids: id } })
+        } else {
+          this.$router.push({ name: 'productDetail', params: { id } })
+        }
       }
     },
   },

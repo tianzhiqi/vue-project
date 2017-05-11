@@ -7,5 +7,6 @@
   "category": "Category",
   "search": "Search",
   "service": "Service",
-  "rec": "Recommend"
+  "rec": "Recommend",
+  "productDetail": "Detail"
 }
