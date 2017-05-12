@@ -12,6 +12,7 @@ const state = {
   topicDetail: {},
   bannerProList: {},
   productDetail: {},
+  skuList: {},
 }
 
 // getters
@@ -26,6 +27,7 @@ const getters = {
   topicDetail: res => res.topicDetail,
   bannerProList: res => res.bannerProList,
   productDetail: res => res.productDetail,
+  skuList: res => res.skuList,
 }
 
 // actions
@@ -76,6 +78,11 @@ const actions = {
       commit(types.PRODUCT_DETAIL, { proDetail })
     })
   },
+  getProSkuList({ commit }, params) {
+    product.getProductSku(params.id).then((sku) => {
+      commit(types.SKU_LIST, { sku })
+    })
+  },
 }
 
 // mutations
@@ -106,6 +113,9 @@ const mutations = {
   },
   [types.PRODUCT_DETAIL](data, { proDetail }) {
     state.productDetail = proDetail
+  },
+  [types.SKU_LIST](data, { sku }) {
+    state.skuList = sku
   },
 }
 

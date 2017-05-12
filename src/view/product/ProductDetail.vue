@@ -28,6 +28,12 @@
         </swiper>
       </div>
       <p class="text-list shop-product_name">{{productDetail.name}}</p>
+      <a class="weui-cell weui-cell_access">
+        <div class="weui-cell__bd">
+          {{$t("product.selectSku")}}
+        </div>
+        <span class="weui-cell__ft"></span>
+      </a>
     </div>
   </div>
 </template>
@@ -50,10 +56,12 @@ export default {
   computed: {
     ...mapGetters({
       productDetail: 'productDetail',
+      skuList: 'skuList',
     }),
   },
   created() {
     this.$store.dispatch('getProductDetail', { id: this.$route.params.id })
+    this.$store.dispatch('getProSkuList', { id: this.$route.params.id })
   },
   components: {
     NavHeader,

@@ -29,4 +29,7 @@ export default {
   getShopProDetail(id) {
     return axios.get(`/api/shopProducts/${id}`).then(res => res.data)
   },
+  getProductSku(id) {
+    return axios.get(`/api/shopProductPropertys/${id}`).then(res => res.data)
+  },
 }
