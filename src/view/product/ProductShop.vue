@@ -15,7 +15,7 @@
       </div>
       <div class="shop-nav weui-flex">
         <div class="weui-flex__item">
-          <a href="#"><span><i class="fa fa-list-ul"></i></span>{{$t("product.category")}}</a>
+          <router-link :to="{name: 'category'}"><span><i class="fa fa-list-ul"></i></span>{{$t("product.category")}}</router-link>
         </div>
         <div class="weui-flex__item">
           <a href="#"><span><i class="fa fa-search"></i></span>{{$t("product.search")}}</a>

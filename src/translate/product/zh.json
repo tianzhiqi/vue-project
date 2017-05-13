@@ -9,5 +9,6 @@
   "service": "客服",
   "rec": "全部推荐",
   "productDetail": "商品详情",
-  "selectSku": "选择规格"
+  "selectSku": "选择规格",
+  "addToCart": "加入购物车"
 }

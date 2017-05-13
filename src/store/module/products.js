@@ -13,6 +13,8 @@ const state = {
   bannerProList: {},
   productDetail: {},
   skuList: {},
+  categoryList: {},
+  category: {},
 }
 
 // getters
@@ -28,6 +30,8 @@ const getters = {
   bannerProList: res => res.bannerProList,
   productDetail: res => res.productDetail,
   skuList: res => res.skuList,
+  categoryList: res => res.categoryList,
+  category: res => res.category,
 }
 
 // actions
@@ -83,6 +87,16 @@ const actions = {
       commit(types.SKU_LIST, { sku })
     })
   },
+  getCategoryList({ commit }) {
+    product.getCategoryList().then((catList) => {
+      commit(types.CAT_LIST, { catList })
+    })
+  },
+  getCategory({ commit }, params) {
+    product.getCategory(params.id).then((cat) => {
+      commit(types.PRODUCT_CATEGORY, { cat })
+    })
+  },
 }
 
 // mutations
@@ -116,6 +130,12 @@ const mutations = {
   },
   [types.SKU_LIST](data, { sku }) {
     state.skuList = sku
+  },
+  [types.CAT_LIST](data, { catList }) {
+    state.categoryList = catList
+  },
+  [types.PRODUCT_CATEGORY](data, { cat }) {
+    state.category = cat
   },
 }
 

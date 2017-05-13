@@ -9,12 +9,12 @@
             </div>
         </div>
         <div class="head-nav-icon" slot="icon">
-            <router-link :to="{name: 'profile'}">
-                <i class="user-icon"></i>
-            </router-link>
             <a href="#">
               <i class="cart-icon"></i>
             </a>
+            <router-link :to="{name: 'profile'}">
+                <i class="user-icon"></i>
+            </router-link>
         </div>
     </nav-header>
     <div class="common-wrap">
@@ -34,6 +34,13 @@
         </div>
         <span class="weui-cell__ft"></span>
       </a>
+    </div>
+    <div class="product-buy full-width_btn">
+      <div class="weui-flex">
+        <div class="weui-flex__item">
+          <button type="button" class="btn btn-tocart">{{$t("product.addToCart")}}</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -71,5 +78,21 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+@import "../../assets/scss/_var.scss";
+.full-width_btn {
+  .weui-flex {
+    height: 100%;
+    align-items: center;
+  }
+  .btn-tocart {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 0;
+    background-color: $theme;
+    color: #fff;
+    padding: 0;
+  }
+}
 </style>

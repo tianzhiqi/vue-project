@@ -9,5 +9,6 @@
   "service": "Service",
   "rec": "Recommend",
   "productDetail": "Detail",
-  "selectSku": "Select Sku"
+  "selectSku": "Select Sku",
+  "addToCart": "Add to Cart"
 }

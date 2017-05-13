@@ -32,4 +32,10 @@ export default {
   getProductSku(id) {
     return axios.get(`/api/shopProductPropertys/${id}`).then(res => res.data)
   },
+  getCategoryList() {
+    return axios.get('/api/productcategory/nameList').then(res => res.data)
+  },
+  getCategory(id) {
+    return axios.get(`/api/productcategory/${id}`).then(res => res.data)
+  },
 }

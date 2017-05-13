@@ -7,6 +7,7 @@ import ProductTopic from '../view/product/ProductTopic'
 import ProductBanner from '../view/product/ProductBanner'
 import ProductIndex from '../view/product/ProductIndex'
 import ProductDetail from '../view/product/ProductDetail'
+import Category from '../view/product/Category'
 import OrderConfirm from '../view/order/OrderConfirm'
 import Order from '../view/order/Order'
 import Member from '../view/member/Member'
@@ -44,6 +45,11 @@ export default new Router({
       path: '/shopproduct/:id',
       name: 'productDetail',
       component: ProductDetail,
+    },
+    {
+      path: '/category',
+      name: 'category',
+      component: Category,
     },
     {
       path: '/neworder/:pid',

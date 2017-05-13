@@ -59,6 +59,13 @@
       vertical-align: middle;
       background: url('../../assets/img/user-icon.png') no-repeat 50%/100% 100%;
     }
+    .cart-icon {
+      display: inline-block;
+      width: 24px;
+      height: 20px;
+      background: url('../../assets/img/cart.png') no-repeat center/100% 100%;
+      vertical-align: middle;
+    }
     .global-logo {
       display: block;
       .global-logo-icon {
