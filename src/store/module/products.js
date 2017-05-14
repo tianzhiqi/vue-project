@@ -15,6 +15,7 @@ const state = {
   skuList: {},
   categoryList: {},
   category: {},
+  productCatList: {},
 }
 
 // getters
@@ -32,6 +33,7 @@ const getters = {
   skuList: res => res.skuList,
   categoryList: res => res.categoryList,
   category: res => res.category,
+  productCatList: res => res.productCatList,
 }
 
 // actions
@@ -97,6 +99,11 @@ const actions = {
       commit(types.PRODUCT_CATEGORY, { cat })
     })
   },
+  getProductCategoryList({ commit }, params) {
+    product.getProductCatList(params).then((proCat) => {
+      commit(types.PRODUCT_CATEGORY_LIST, { proCat })
+    })
+  },
 }
 
 // mutations
@@ -136,6 +143,9 @@ const mutations = {
   },
   [types.PRODUCT_CATEGORY](data, { cat }) {
     state.category = cat
+  },
+  [types.PRODUCT_CATEGORY_LIST](data, { proCat }) {
+    state.productCatList = proCat
   },
 }
 

@@ -20,7 +20,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import NavHeader from '../components/Header'
+
 export default {
+  name: 'product-category',
+  computed: {
+    ...mapGetters({
+      productCategory: 'productCatList',
+    }),
+  },
+  created() {
+    this.$store.dispatch('getProductCategoryList', { productCategoryId: this.$route.params.id, page: 1 })
+  },
+  components: {
+    NavHeader,
+  },
 }
 </script>
 

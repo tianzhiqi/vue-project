@@ -38,4 +38,7 @@ export default {
   getCategory(id) {
     return axios.get(`/api/productcategory/${id}`).then(res => res.data)
   },
+  getProductCatList(params) {
+    return axios.get(`/api/shopProducts?${Qs.stringify(params)}`).then(res => res.data)
+  },
 }

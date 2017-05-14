@@ -39,13 +39,13 @@
     created() {
       if (!localStorage.token) {
         // o-UbJv6eJfqN0PkyvN0RiMXaPW3U
-        identity.login('o-UbJv6eJfqN0PkyvN0RiMXaPW3U').then((data) => {
+        identity.login('oZhudv7YOegsrsV6QVAsmkdKJqAQ').then((data) => {
           if (data.isEnrolled) {
             localStorage.setItem('token', data.token)
           }
         })
       }
-      this.$store.dispatch('getProductList', { page: 1, tenantId: 1 })
+      this.$store.dispatch('getProductList', { page: 1, tenantId: 95 })
     },
     components: {
       ProductMaster,

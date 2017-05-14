@@ -16,12 +16,12 @@
     </nav-header>
     <div class="common-wrap">
       <div class="category-list clearfix">
-        <a href="#" class="category-item" v-for="item in categoryList.list">
+        <router-link :to="{name: 'productCat', params:{id: item.id}}" class="category-item" v-for="item in categoryList.list">
           <div class="img-wrap">
             <img :src="item.Image.key | qiniu" alt="">
           </div>
           <p class="category-name">{{item.categoryName}}</p>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
