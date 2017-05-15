@@ -49,8 +49,8 @@
         </div>
       </div>
       <div class="shop-hotlist">
-        <div class="category-item">
-
+        <div class="category-item" >
+          <product-item v-for="hot in hotList.list[0].ShopProduct" :product="hot"></product-item>
         </div>
       </div>
       <div class="shop-banners" v-for="item in singleBanner.list">
@@ -68,6 +68,7 @@
 import { mapGetters } from 'vuex'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import ProductMaster from './ProductMaster'
+import ProductItem from '../components/ProductItem'
 
 export default {
   name: 'product-shop',
@@ -108,6 +109,7 @@ export default {
     ProductMaster,
     swiper,
     swiperSlide,
+    ProductItem,
   },
 }
 </script>
