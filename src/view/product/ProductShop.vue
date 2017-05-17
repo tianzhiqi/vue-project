@@ -48,10 +48,8 @@
           </div>
         </div>
       </div>
-      <div class="shop-hotlist">
-        <div class="category-item" >
-          <product-item v-for="hot in hotList.list[0].ShopProduct" :product="hot"></product-item>
-        </div>
+      <div class="shop-hotlist clearfix" v-if="hotList.list">
+        <product-item v-for="hot in hotList.list[0].ShopProduct" :product="hot"></product-item>
       </div>
       <div class="shop-banners" v-for="item in singleBanner.list">
         <div class="weui-flex">
