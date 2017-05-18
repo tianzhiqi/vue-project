@@ -15,6 +15,9 @@
         </div>
     </nav-header>
     <div class="common-wrap">
+      <div class="shop-pro_list clearfix">
+        <product-item v-for="item in productCategory.list" :product="item"></product-item>
+      </div>
     </div>
   </div>
 </template>
@@ -22,6 +25,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import NavHeader from '../components/Header'
+import ProductItem from '../components/ProductItem'
 
 export default {
   name: 'product-category',
@@ -35,6 +39,7 @@ export default {
   },
   components: {
     NavHeader,
+    ProductItem,
   },
 }
 </script>

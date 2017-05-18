@@ -24,10 +24,8 @@
       <div class="topic-info">
         {{topicDetail.description}}
       </div>
-      <div class="topic-list">
-        <div class="category-item">
-
-        </div>
+      <div class="topic-list clearfix" v-if="topicDetail.ShopProduct">
+        <product-item v-for="item in topicDetail.ShopProduct.list[0]" :product="item"></product-item>
       </div>
     </div>
   </div>
@@ -36,6 +34,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import NavHeader from '../components/Header'
+import ProductItem from '../components/ProductItem'
 
 export default {
   name: 'topic-detail',
@@ -49,6 +48,7 @@ export default {
   },
   components: {
     NavHeader,
+    ProductItem,
   },
 }
 </script>

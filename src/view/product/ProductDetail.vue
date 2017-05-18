@@ -27,13 +27,15 @@
           </div>
         </swiper>
       </div>
-      <p class="text-list shop-product_name">{{productDetail.name}}</p>
-      <a class="weui-cell weui-cell_access">
-        <div class="weui-cell__bd">
-          {{$t("product.selectSku")}}
-        </div>
-        <span class="weui-cell__ft"></span>
-      </a>
+      <div class="product-detail_info">
+        <p class="text-list product-detail_name">{{productDetail.name}}</p>
+        <a class="weui-cell weui-cell_access">
+          <div class="weui-cell__bd">
+            {{$t("product.selectSku")}}
+          </div>
+          <span class="weui-cell__ft"></span>
+        </a>
+      </div>
     </div>
     <div class="product-buy full-width_btn">
       <div class="weui-flex">
@@ -93,6 +95,12 @@ export default {
     background-color: $theme;
     color: #fff;
     padding: 0;
+  }
+}
+.product-detail_info {
+  .product-detail_name {
+    padding: 0 10px;
+    line-height: 30px;
   }
 }
 </style>

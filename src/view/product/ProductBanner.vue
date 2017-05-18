@@ -4,7 +4,7 @@
         <div class="weui-flex" slot="nav">
             <div class="weui-flex__item">
                 <a class="text-center font-theme">
-                  <label>{{topicDetail.name}}</label>
+                  <label></label>
                 </a>
             </div>
         </div>
@@ -18,8 +18,8 @@
         </div>
     </nav-header>
     <div class="common-wrap">
-      <div class="category-item">
-
+      <div class="banner-pro_list clearfix">
+        <product-item v-for="item in bannerPro" :product="item"></product-item>
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import NavHeader from '../components/Header'
+import ProductItem from '../components/ProductItem'
 
 export default {
   name: 'product-banner',
@@ -39,8 +40,9 @@ export default {
   created() {
     this.$store.dispatch('getBannerProList', this.$route.params.ids)
   },
-  component: {
+  components: {
     NavHeader,
+    ProductItem,
   },
 }
 </script>
