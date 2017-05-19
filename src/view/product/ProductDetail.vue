@@ -29,6 +29,10 @@
       </div>
       <div class="product-detail_info">
         <p class="text-list product-detail_name">{{productDetail.name}}</p>
+        <div class="product-detail_price">
+          <p class="font-theme" v-if="productDetail.startPrice == productDetail.endPrice">{{productDetail.price | price}}</p>
+          <p class="font-theme" v-if="productDetail.startPrice != productDetail.endPrice">{{productDetail.startPrice | price}}~{{productDetail.endPrice | price}}</p>
+        </div>
         <a class="weui-cell weui-cell_access">
           <div class="weui-cell__bd">
             {{$t("product.selectSku")}}
@@ -101,6 +105,9 @@ export default {
   .product-detail_name {
     padding: 0 10px;
     line-height: 30px;
+  }
+  .product-detail_price {
+    padding: 0 10px;
   }
 }
 </style>
