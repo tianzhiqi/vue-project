@@ -10,5 +10,8 @@
   "rec": "全部推荐",
   "productDetail": "商品详情",
   "selectSku": "选择规格",
-  "addToCart": "加入购物车"
+  "addToCart": "加入购物车",
+  "detail": "图文详情",
+  "comment": "评论",
+  "userComment": "用户评论"
 }

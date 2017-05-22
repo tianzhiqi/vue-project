@@ -40,6 +40,20 @@
           <span class="weui-cell__ft"></span>
         </a>
       </div>
+      <div class="product-detail_content">
+        <div class="common-tab">
+          <div class="weui-navbar">
+            <div class="weui-navbar__item">{{$t("product.detail")}}</div>
+            <div class="weui-navbar__item">{{$t("product.comment")}}</div>
+          </div>
+          <div class="common-tab_panel">
+            <div class="product-detail_tab" v-html="productDetail.description"></div>
+            <div class="comment_tab">
+              <p class="font-theme">{{$t("product.userComment")}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="product-buy full-width_btn">
       <div class="weui-flex">
@@ -102,12 +116,39 @@ export default {
   }
 }
 .product-detail_info {
+  padding: 0 10px;
   .product-detail_name {
-    padding: 0 10px;
     line-height: 30px;
   }
-  .product-detail_price {
+}
+.product-detail_content {
+  margin-top: 10px;
+  .product-detail_tab {
     padding: 0 10px;
+    p {
+      word-break: break-word;
+      text-align: justify;
+    }
+    img {
+      max-width: 100%;
+    }
   }
+}
+.common-tab {
+  position: relative;
+}
+.weui-navbar {
+  background-color: #fff;
+  &:after {
+    display: none;
+  }
+}
+.weui-navbar__item:after {
+  border-right: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  height: 1px;
+  top: auto;
+  transform: scaleY(.5);
 }
 </style>

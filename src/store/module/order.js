@@ -7,6 +7,7 @@ const state = {
   quantity: 1,
   preOrder: {},
   orderList: {},
+  shopOrderList: {},
 }
 
 // getters
@@ -14,6 +15,7 @@ const getters = {
   quantity: res => res.quantity,
   preOrder: res => res.preOrder,
   orderList: res => res.orderList,
+  shopOrderList: res => res.shopOrderList,
 }
 
 // actions
@@ -39,6 +41,11 @@ const actions = {
       commit(types.ORDER_LIST, { orderList })
     })
   },
+  getShopOrderList({ commit }, params) {
+    order.getShopOrderList(params).then((shopOrderList) => {
+      commit(types.SHOP_ORDER_LIST, { shopOrderList })
+    })
+  },
 }
 
 const mutations = {
@@ -58,6 +65,9 @@ const mutations = {
   },
   [types.ORDER_LIST](data, { orderList }) {
     state.orderList = orderList
+  },
+  [types.SHOP_ORDER_LIST](data, { shopOrderList }) {
+    state.shopOrderList = shopOrderList
   },
 }
 

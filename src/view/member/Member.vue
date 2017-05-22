@@ -24,10 +24,21 @@
           </div>
         </a>
       </div>
-      <div class="user-order">
-        <div class="">
-
-        </div>
+      <div class="weui-cells">
+        <a class="weui-cell weui-cell_access">
+          <div class="weui-cell__bd">
+            <p>{{$t("member.ticketOrder")}}</p>
+          </div>
+          <div class="weui-cell__ft">
+          </div>
+        </a>
+        <a class="weui-cell weui-cell_access">
+          <div class="weui-cell__bd">
+            <p>{{$t("member.shopOrder")}}</p>
+          </div>
+          <div class="weui-cell__ft">
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -48,6 +59,7 @@ export default {
   created() {
     this.$store.dispatch('getMemberInfo')
     this.$store.dispatch('getOrderList', { page: 1 })
+    this.$store.dispatch('getShopOrderList', { page: 1 })
   },
   components: {
     NavHeader,
