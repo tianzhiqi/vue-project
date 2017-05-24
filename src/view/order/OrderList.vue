@@ -14,13 +14,71 @@
         </router-link>
       </div>
     </nav-header>
+    <div class="common-wrap">
+      <div class="order-list">
+        <div class="order-item" v-for="item in orderList.list">
+          <a href="#">
+            <div class="order-view">
+              <p class="order-list-title">
+                <i class="show-badge">{{$t("product.product")}}</i>
+                <i class="small-icon badge-icon"></i>
+                <label class="pull-left"><span>{{$t("order.orderNo")}}</span>{{item.orderNo}}</label>
+                <label class="pull-right">{{item.createdtime | date('YYYY-MM-DD HH:mm')}}</label>
+              </p>
+            </div>
+            <div class="shop-order_pro">
+              <div class="weui-cell">
+                <div class="img-wrap">
+                  <img :src="item.product.titleImage" alt="">
+                </div>
+                <div class="weui-cell__bd">
+                  <p class="text-title text-list">{{item.product.name}}</p>
+                  <p class="shop-order_price"><span class="font-theme">{{item.product.price | price}}</span><span>&times;</span>{{item.quantity}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="shop-order_ft">
+              <label class="pull-left">{{item.totalAmount | price}}</label>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import NavHeader from '../components/Header'
+
 export default {
+  name: 'order-list',
+  computed: {
+    ...mapGetters({
+      orderList: 'orderList',
+    }),
+  },
+  created() {
+    this.$store.dispatch('getOrderList', { page: 1 })
+  },
+  components: {
+    NavHeader,
+  },
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+.order-list {
+  .order-item {
+    background: #fff;
+    margin-bottom: 10px;
+    padding:10px;
+    .order-list-title {
+      font-size: 12px;
+      height: 24px;
+      line-height: 24px;
+      position: relative;
+    }
+  }
+}
 </style>

@@ -12,6 +12,7 @@ import Category from '../view/product/Category'
 import OrderConfirm from '../view/order/OrderConfirm'
 import Order from '../view/order/Order'
 import ShopOrderList from '../view/order/ShopOrderList'
+import OrderList from '../view/order/OrderList'
 import Member from '../view/member/Member'
 
 Vue.use(Router)
@@ -62,6 +63,11 @@ export default new Router({
       path: '/neworder/:pid',
       name: 'orderConfirm',
       component: OrderConfirm,
+    },
+    {
+      path: '/orderlist',
+      name: 'orderList',
+      component: OrderList,
     },
     {
       path: '/shoporder',

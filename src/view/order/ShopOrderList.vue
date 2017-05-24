@@ -15,8 +15,8 @@
       </div>
     </nav-header>
     <div class="common-wrap">
-      <div class="shoporder-list">
-        <div class="shoporder-item" v-for="item in shoporderList.list">
+      <div class="order-list">
+        <div class="order-item" v-for="item in shoporderList.list">
           <a href="#">
             <div class="order-view">
               <p class="order-list-title">

@@ -25,13 +25,13 @@
         </a>
       </div>
       <div class="weui-cells">
-        <a class="weui-cell weui-cell_access">
+        <router-link :to="{name: 'orderList'}" class="weui-cell weui-cell_access">
           <div class="weui-cell__bd">
             <p>{{$t("member.ticketOrder")}}</p>
           </div>
           <div class="weui-cell__ft">
           </div>
-        </a>
+        </router-link>
         <router-link :to="{name: 'shopOrderList'}" class="weui-cell weui-cell_access">
           <div class="weui-cell__bd">
             <p>{{$t("member.shopOrder")}}</p>
@@ -53,12 +53,10 @@ export default {
   computed: {
     ...mapGetters({
       member: 'member',
-      orderList: 'orderList',
     }),
   },
   created() {
     this.$store.dispatch('getMemberInfo')
-    this.$store.dispatch('getOrderList', { page: 1 })
   },
   components: {
     NavHeader,
