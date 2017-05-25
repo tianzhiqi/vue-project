@@ -24,7 +24,7 @@
           </div>
         </a>
       </div>
-      <div class="weui-cells">
+      <div class="user-center_list">
         <router-link :to="{name: 'orderList'}" class="weui-cell weui-cell_access">
           <div class="weui-cell__bd">
             <p>{{$t("member.ticketOrder")}}</p>
@@ -100,6 +100,16 @@ export default {
         font-size: 14px;
       }
     }
+  }
+}
+.user-center_list {
+  margin-top: 10px;
+  color: #646464;
+  .weui-cell {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    font-size: 14px;
   }
 }
 </style>

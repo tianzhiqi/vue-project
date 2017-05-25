@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="shop-order_ft">
-              <label class="pull-left">{{item.sumTotal | price}}</label>
+              <label>{{item.sumTotal | price}}</label>
             </div>
           </a>
         </div>
@@ -68,13 +68,6 @@ export default {
 </script>
 
 <style lang="scss">
-.shoporder-item {
-  .order-view {
-    .order-list-title {
-      font-size: 12px;
-    }
-  }
-}
 .shop-order_pro {
   .img-wrap {
     width: 80px;

@@ -29,7 +29,7 @@
             <div class="shop-order_pro">
               <div class="weui-cell">
                 <div class="img-wrap">
-                  <img :src="item.product.titleImage" alt="">
+                  <img :src="item.product.coverImage" alt="">
                 </div>
                 <div class="weui-cell__bd">
                   <p class="text-title text-list">{{item.product.name}}</p>
@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="shop-order_ft">
-              <label class="pull-left">{{item.totalAmount | price}}</label>
+              <label>{{item.totalAmount | price}}</label>
             </div>
           </a>
         </div>
@@ -72,12 +72,16 @@ export default {
   .order-item {
     background: #fff;
     margin-bottom: 10px;
-    padding:10px;
+    padding:0 10px;
     .order-list-title {
       font-size: 12px;
       height: 24px;
       line-height: 24px;
       position: relative;
+      border-bottom: 1px solid #eee;
+    }
+    .weui-cell__bd {
+      min-height: 80px;
     }
   }
 }
