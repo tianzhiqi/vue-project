@@ -8,6 +8,7 @@ const state = {
   preOrder: {},
   orderList: {},
   shopOrderList: {},
+  orderDetail: {},
 }
 
 // getters
@@ -16,6 +17,7 @@ const getters = {
   preOrder: res => res.preOrder,
   orderList: res => res.orderList,
   shopOrderList: res => res.shopOrderList,
+  orderDetail: res => res.orderDetail,
 }
 
 // actions
@@ -27,8 +29,8 @@ const actions = {
     commit(types.NUMBER_REDUCE)
   },
   placeOrder({ commit }, params) {
-    order.placeOrder(params).then((orderDetail) => {
-      commit(types.PLACE_ORDER, { orderDetail })
+    order.placeOrder(params).then((newOrder) => {
+      commit(types.PLACE_ORDER, { newOrder })
     })
   },
   getPreOrder({ commit }, params) {
@@ -46,6 +48,11 @@ const actions = {
       commit(types.SHOP_ORDER_LIST, { shopOrderList })
     })
   },
+  getOrderDetail({ commit }, params) {
+    order.getOrder(params.id).then((orderDetail) => {
+      commit(types.ORDER_DETAIL, { orderDetail })
+    })
+  },
 }
 
 const mutations = {
@@ -57,8 +64,8 @@ const mutations = {
       state.quantity -= 1
     }
   },
-  [types.PLACE_ORDER](data, { orderDetail }) {
-    router.push({ name: 'order', params: { id: orderDetail.id } })
+  [types.PLACE_ORDER](data, { newOrder }) {
+    router.push({ name: 'order', params: { id: newOrder.id } })
   },
   [types.GET_ORDER](data, { preOrder }) {
     state.preOrder = preOrder
@@ -68,6 +75,9 @@ const mutations = {
   },
   [types.SHOP_ORDER_LIST](data, { shopOrderList }) {
     state.shopOrderList = shopOrderList
+  },
+  [types.ORDER_DETAIL](data, { orderDetail }) {
+    state.orderDetail = orderDetail
   },
 }
 

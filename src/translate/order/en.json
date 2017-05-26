@@ -6,5 +6,6 @@
   "submit": "Submit",
   "orderNo": "Order No.",
   "total": "Total",
-  "order": "Order"
+  "order": "Order",
+  "orderDetail": "Order Detail"
 }

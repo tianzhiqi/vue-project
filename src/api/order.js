@@ -17,4 +17,7 @@ export default {
   getShopOrderList(params) {
     return axios.get(`/api/shopOrders?${Qs.stringify(params)}`).then(res => res.data)
   },
+  getOrder(id) {
+    return axios.get(`/api/orders/${id}`).then(res => res.data)
+  },
 }
