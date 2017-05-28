@@ -17,7 +17,7 @@
     <div class="common-wrap">
       <div class="order-list">
         <div class="order-item" v-for="item in orderList.list">
-          <a href="#">
+          <router-link :to="{name: 'orderDetail', params: {id: item.id}}">
             <div class="order-view">
               <p class="order-list-title">
                 <i class="show-badge">{{$t("product.product")}}</i>
@@ -40,7 +40,7 @@
             <div class="shop-order_ft">
               <label>{{item.totalAmount | price}}</label>
             </div>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

@@ -22,14 +22,14 @@ import { mapGetters } from 'vuex'
 import NavHeader from '../components/Header'
 
 export default {
-  name: 'order-detail',
+  name: 'shoporder-detail',
   computed: {
     ...mapGetters({
-      orderDetail: 'orderDetail',
+      orderDetail: 'shopOrderDetail',
     }),
   },
   created() {
-    this.$store.dispatch('getOrderDetail', { id: this.$route.params.id })
+    this.$store.dispatch('getShopOrderDetail', { id: this.$route.params.orderno })
   },
   components: {
     NavHeader,

@@ -13,6 +13,8 @@ import OrderConfirm from '../view/order/OrderConfirm'
 import Order from '../view/order/Order'
 import ShopOrderList from '../view/order/ShopOrderList'
 import OrderList from '../view/order/OrderList'
+import OrderDetail from '../view/order/OrderDetail'
+import ShopOrderDetail from '../view/order/ShopOrderDetail'
 import Member from '../view/member/Member'
 
 Vue.use(Router)
@@ -88,6 +90,16 @@ export default new Router({
       path: '/order/:id',
       name: 'order',
       component: Order,
+    },
+    {
+      path: '/orderdetail/:id',
+      name: 'orderDetail',
+      component: OrderDetail,
+    },
+    {
+      path: '/shoporder/:orderno',
+      name: 'shoporderDetail',
+      component: ShopOrderDetail,
     },
   ],
   linkActiveClass: 'active',
